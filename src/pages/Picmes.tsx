@@ -130,6 +130,7 @@ const Picmes: React.FC = () => {
     setIsLoading(true);
     Axios.post(`${apiUrl}/picmes`, { page: currentPage })
       .then((response) => {
+        console.log('data')
         setData(response.data.picmes);
         setTotalPage(response.data.totalPicmes)
         setIsLoading(false);
