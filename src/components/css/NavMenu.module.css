@@ -1,0 +1,246 @@
+*{
+    box-sizing: border-box;
+    /* font-size: 20px;
+    text-decoration: none;
+    color: #262626; */
+}
+
+.body{
+    margin: 0;
+    background: #fafafa;
+    color:#262626;
+    /* font-family: ; */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px  1.95px 2.6px;
+    top: 0; /* this is required for "sticky" to work */
+    /* position: sticky; */
+  
+  
+}
+
+.sidebar{
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* width: 350px; */
+    height: 100vh;
+    padding:  40px 10px 30px 10px;
+    background: #ffffff;
+    border-right: 1px solid #dbdbdb;
+    transition: 0.3s;
+    width: 100%;
+    
+    
+    
+}
+
+.sidebar-header{
+    width:100%;
+    margin-bottom: 24px;
+    border-bottom: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b);
+    cursor: pointer;
+}
+
+.logo-icon{
+    display: none;
+}
+
+.logo-img{
+    margin-left: 40px;
+    /* height:48px; */
+    width: 250px;
+    
+    margin-bottom: 24px;
+    
+}
+
+
+
+
+.sidebar button {
+    height:80px;
+    background:transparent;
+    border:0;
+    padding: 0;
+    font-family: inherit;
+    color:inherit;
+    cursor:pointer;
+}
+
+
+
+
+.sidebar button > span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 68px;
+    padding: 0 20px 0 20px;
+ 
+    margin: 0 10px;
+ 
+    border-radius: 24px;
+    line-height: 1;
+    transition: 0.3s;
+  
+    
+}
+
+
+
+.sidebar .button:hover {
+   border-radius: 24px;
+    background-image: linear-gradient(to right, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b) ; 
+}
+
+.sidebar .button:hover span {
+   color: #ffffff;
+}
+
+
+
+.sidebar .button:hover  span {
+    /* background: #f2f2f2; */
+    scale: 1.05;   
+}
+
+.sidebar .button:active > span{
+    transform: scale(.9);
+}
+
+.sidebar .button:hover > span :is(img) {
+ scale: 1.05;
+}
+
+.sidebar .button > span > span {
+    transition: 0s;
+}
+
+.sidebar nav{
+    width: 100%;
+}
+
+@media (width < 1500px) {
+    .logo-img{
+        display:none
+    }
+    .logo-icon{
+        display:block
+    }
+ 
+
+    .sidebar, .body{
+        width:72px
+    }
+    .sidebar button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+
+        justify-content: center;
+    }
+    .sidebar button > span {
+        width:50px;
+        justify-content: center;
+    }
+    .sidebar button > span > span {
+        display: none;
+    }
+    .sidebar nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+       
+    }
+  
+}
+
+.sidebar button img {
+  
+    transition:0.2s;
+   width: 48px;
+   height: 48px;
+}
+
+.sidebar button span {
+    font-size:20px;
+    
+}
+
+
+.nav {
+    flex:1 1 auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+
+
+.logout-button{
+    border: 2px solid #DB5F58;
+    
+}
+
+.logout-button span span{
+    color: #DB5F58;
+}
+
+.logout-button :hover{
+    /* background-image: linear-gradient(to right, #DB5F58,#e56b6f,#e88c7d,#eaac8b) */
+    background-color: #DB5F58 ;
+}
+
+.logout-button:hover span{
+    /* background-image: linear-gradient(to right, #DB5F58,#e56b6f,#e88c7d,#eaac8b) */
+    /* color: #ffffff; */
+    scale: 1.05;
+}
+
+
+.sidebar .logout-button:hover > span  span {
+    color: #ffffff;
+ }
+ 
+ 
+ 
+ .sidebar .logout-button:hover  span span {
+     /* background: #f2f2f2; */
+     scale: 1.05;
+ }
+ 
+ .sidebar .logout-button:active > span{
+     transform: scale(.9);
+ }
+ 
+ .sidebar .logout-button:hover > span :is(img) {
+  scale: 1.05;
+ }
+ 
+ .sidebar .logout-button > span > span {
+     transition: 0.3s;
+ }
+
+
+ .card-modal{
+    background-color: #fafafa;
+    position: absolute;
+    /* top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%); */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 80vh;
+    overflow: scroll;
+    border-radius: 16px;
+ }

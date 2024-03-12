@@ -1,0 +1,34 @@
+.loading-wrapper{
+    
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 25%;
+  left: 25%;
+  /* margin: 0 1em ; */
+  
+ }
+ @keyframes s3 {to{transform: rotate(1turn)}}
+
+
+ 
+ .custom-loader {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:conic-gradient(#0000 10%,#355070);
+  mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation:s3 1s infinite linear;
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation:s3 1s infinite linear;
+
+  position: relative;
+  right: 25%;
+
+  /* transform: translate(-50%, -50%); */
+  
+}

@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+   margin: 0;
+  
+}
+
+.nav{
+   flex: 20%;
+   flex-grow: 1;
+  
+}
+
+.main{
+    flex: 80%;
+    flex-grow: 5;
+   
+    height: 100vh;
+    overflow-y: auto;
+    
+}

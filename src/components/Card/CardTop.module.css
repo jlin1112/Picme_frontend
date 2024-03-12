@@ -1,0 +1,49 @@
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.top .user-info{
+    display: flex;
+    align-items: center;
+}
+.top .user-info h3{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+}
+
+.top .user-info h3 b{
+    font-size: 1em;
+}
+
+.top .user-info .avatar{
+    position: relative;
+    width: 55px;
+    height: 55px;
+  
+   
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 16px;
+}
+
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    border-radius: 6px;
+}
+
+.top .user-info h3{
+    font-size: 20px;
+    color: #4d4d4f;
+    font-weight: 500;
+    line-height: 1em;
+}

@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: #ffebcd;
+/* width: 100vw;
+height: 100vh; */
+position: relative;
+min-width: 350px;
+min-height: 100vh;
+}
+
+.heading{
+    /* background-color: aquamarine; */
+    width: 50vw;
+    padding-left:2em;
+}
+
+.h1{
+    color: transparent;
+    position: relative;
+   font-size: 15vw; 
+   background-image: linear-gradient(to right, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b) ; 
+   background-clip: text;
+}
+
+.p{
+    font-size: 5vw;
+    background-image: linear-gradient(to right, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b) ; 
+    background-clip: text;
+    color: transparent;
+    margin-left: 10px;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: fit-content;
+    height: fit-content;
+    /* background-color: #355070; */
+    position: absolute;
+    /* margin-left: auto; */
+    margin-right: 2em;
+    margin-bottom: 2em;
+    bottom:0;
+    right:0;
+    
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 2vw;
+    color: #355070;
+}
+
+.options button{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: #355070;
+}
+
+.options button:hover{
+    /* border-bottom: 2px solid #355070; */
+    text-decoration: underline;
+}
+
+.disclaimer{
+    background-color: #fafafa;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50;
+   transform: translate(-50%, -50%);
+    width: 80vw;
+    border-radius: 8px;
+    padding:  14pt;
+   height: 90vh;
+   overflow-y: scroll;
+}
+
+@media(width < 1550px){
+    .container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .heading{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .heading p {
+        text-align: center;
+    }
+    .options{
+        position: relative;
+        margin-bottom:0;
+      margin-top: 2em;
+    }
+    .options button{
+        font-size: 3vw;
+    }
+}
+
+@media(width < 1000px){
+ *{
+    margin: 0;
+    padding: 0;
+ }
+ .options button{
+    font-size: 2.5vw;
+ }
+
+}@media(width < 800px){
+    .h1{
+        font-size: 100px;
+    }
+    .p{
+        font-size: 25px;
+    }
+    .options button{
+        font-size: 20px;
+    }
+    .options p{
+        font-size: 16pt;
+    }
+}

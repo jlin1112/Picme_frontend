@@ -1,0 +1,36 @@
+.container{
+    padding: 16px;
+ 
+}
+
+.container h1{
+    color: transparent;
+    background-image: linear-gradient(to right, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b) ; 
+    background-clip: text;
+}
+
+
+
+.container form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container textarea{
+    resize: none;
+    border: 2px solid black;
+    font-size: 16pt;
+}
+
+.container button{
+    align-self: flex-end;
+    background-color: none;
+    border: none;
+    background-color: #355070;
+    color: #fafafa;
+    height: 50px;
+    width: 100px;
+    border-radius: 16px;
+    cursor: pointer;
+}

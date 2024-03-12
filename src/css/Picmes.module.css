@@ -1,0 +1,258 @@
+*{
+    box-sizing: border-box;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+   margin: 0;
+  
+}
+
+.nav{
+   flex: 20%;
+   flex-grow: 1;
+   width: fit-content;
+}
+
+.main{
+    flex: 80%;
+    flex-grow: 5;
+   
+    height: 100vh;
+    overflow-y: auto;
+    background: rgb(250,250,250);
+background: linear-gradient(118deg, rgba(250,250,250,1) 50%, rgba(255,235,205,1) 100%);
+    
+}
+
+
+.item{
+    width: 720px;
+}
+
+.line {
+    display: inline-block;
+    border-top: 1px solid #4d4d4f;
+    width: 450px;
+    /* margin:  0 6em; */
+  }
+
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    /* margin: 4em 0 0 4em; */
+    gap: 4em;
+    align-items: center;
+   
+  }
+
+  .items-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2em;
+  }
+
+ 
+
+  .container{
+    margin: 0em 0 2em 1em;
+    display: inline-block;
+  }
+
+  /* .container:nth-child(even) {
+    margin: 4em 0 2em 1em;
+   
+  } */
+
+  .card-modal{
+    background-color: #fafafa;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50;
+   transform: translate(-50%, -50%);
+    width: 70vw;
+    border: 2px solid #355070;
+    border-radius: 8px;
+    padding: 0;
+   height: 90vh;
+  }
+
+
+.modal{
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50;
+ transform: translate(-50%, -50%);
+  padding:0;
+}
+
+.backicon{
+    margin: 1em;
+    cursor: pointer;
+}
+
+.backicon:hover >  :is(img) {
+    scale: 1.05;
+    transition: 0.2s;
+   }
+
+.pagination-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+   .pagination{
+    margin: 2em 0;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 2em;
+   }
+   .pagination > *{
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .active-page{
+    border:2px solid #355070;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+   }
+
+ 
+
+
+   .loading-wrapper{
+    
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 25%;
+   }
+
+   .custom-loader {
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background:conic-gradient(#0000 10%,#ef8453);
+    mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1s infinite linear;
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1s infinite linear;
+
+    position: relative;
+    /* left: 25%; */
+    top:25%;
+   
+    /* transform: translate(-50%, -50%); */
+    
+  }
+  @keyframes s3 {to{transform: rotate(1turn)}}
+
+.loadingFailed{
+ 
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 25%;
+
+}
+
+.loadingFailed img{
+  height: 100px;
+  width: 100px;
+}
+
+.loading{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite
+}
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #355070;
+  animation: prixClipFix 2s linear infinite ;
+}
+
+@keyframes rotate {
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
+
+
+@media (width < 1600px) {
+
+  .nav{
+   
+    max-width: fit-content;
+  
+    
+ }
+
+ .card-modal{
+  height: 80vh;
+  max-width: fit-content;
+ 
+ }
+
+ .custom-loader{
+  width: 50px;
+  height: 50px;
+ }
+ .loading-wrapper{
+  height: 50px;
+ }
+
+ .card-modal{
+  border: none;
+ }
+}
+
+
+
+/* card--------------------------------------------------------------- */
+
+ 

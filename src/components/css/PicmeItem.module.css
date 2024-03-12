@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+   margin: 0;
+  
+}
+
+.nav{
+   flex: 20%;
+   flex-grow: 1;
+  
+}
+
+.main{
+    flex: 80%;
+    flex-grow: 5;
+   
+    height: 100vh;
+    overflow-y: auto;
+    
+}
+
+
+/* .card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+     min-height: 100vh;
+    background: black;
+    width: 720px;
+     
+} */
+
+
+.card{
+    position:relative;
+    /* width: 720px; */
+    width: 480px;
+    /* min-height: 960px; */
+    height: fit-content;
+    background: #fafafa;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+    padding: 20px;
+    /* margin-left: 5rem; */
+    border-radius: 8px;
+    /* margin:  4em 6em ; */
+    transition: 0.3s;
+    /* cursor: pointer; */
+   
+}
+
+.card > div {
+    overflow: hidden;
+}
+
+.card:hover  {
+   transform: scale(1.02);
+   box-shadow: 15px 15px 60px rgba(0,0,0,0.15);
+  
+}
+
+.card .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.card .top .user-info{
+    display: flex;
+    align-items: center;
+}
+
+.card .top .user-info .avatar{
+    position: relative;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 16px;
+    border: 3px solid #355070;
+    background-color: #355070;
+}
+
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.image-cover{
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 6px;
+    
+}
+
+.card .top .user-info h3{
+    font-size: 20px;
+    color: #4d4d4f;
+    font-weight: 500;
+    line-height: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.dot{
+    cursor: pointer;
+    position: relative;
+}
+
+.edit{
+    background-color: #355070;
+   padding: 0.5em 1em;
+   border-radius: 12px;
+   cursor: pointer;
+
+}
+
+.edit-dot{
+    display: none;
+    font-weight: 700;
+    font-size: 2em;
+
+}
+
+
+
+.follow{
+    background-color: #fafafa;
+    border:2px solid #355070;
+    padding: 0.5em ;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.image{
+    position: relative;
+    width: 100%;
+    /* height: 640px; */
+    height: 360px;
+    margin-top: 10px ;
+    cursor: pointer;
+    border-radius: 6px;
+   
+}
+
+.description{
+    display: flex;
+    font-weight: 400;
+    margin: 10px 0;
+    
+    width: 100%;
+    /* this code clamps based on specified lines */
+    overflow: hidden;
+   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  cursor: pointer;
+  font-size: 1.25em;
+  
+   
+}
+
+.custom-loader {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:conic-gradient(#0000 10%,#eb9456);
+    mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1s infinite linear;
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1s infinite linear;
+  }
+  @keyframes s3 {to{transform: rotate(1turn)}}
+
+
+
+  .bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    /* border: 2px solid #355070; */
+    margin-top: 10px;
+   
+  }
+
+.bottom img{
+    cursor: pointer;
+}
+.bottom span{
+    cursor: pointer;
+}
+
+  .bottom div{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+   
+  }
+
+
+  /* .card:hover  {
+   transform: scale(1.02);
+   box-shadow: 15px 15px 60px rgba(0,0,0,0.15);
+} */
+
+@media (width < 800px) {
+
+    .card{
+        max-width: 20em;
+    }
+
+    .image{
+        max-width: 100%;
+    }
+
+    .edit{
+        display: none;
+    }
+
+    .edit-dot{
+        display: block;
+        padding-bottom: 20px;
+    }
+   
+
+}
+
+@media (width < 400px) {
+
+    .card{
+        max-width: 17em;
+    }
+
+    .image{
+        max-width: 100%;
+    }
+}

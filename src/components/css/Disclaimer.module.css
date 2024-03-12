@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.h1{
+    font-size: 45pt;
+    margin-bottom: 21pt;
+    color: transparent;
+   background-image: linear-gradient(to right, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b) ; 
+   background-clip: text;
+}
+
+.heading{
+    color: transparent;
+    background-image: linear-gradient(to right, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b) ; 
+    background-clip: text;
+    margin-bottom: 21pt;
+}
+
+.h2{
+    margin-bottom: 0pt;
+   
+}
+
+.container{
+   
+  display: flex;
+  flex-direction: column;
+
+}
+
+.container  p{
+    font-size: 14pt;
+    line-height: 21pt;
+    margin-bottom: 21pt;
+    
+}
+.container p b{
+    font-size: 16pt;
+}
+
+.container button{
+    background-color: #355070;
+    color: #fafafa;
+    width: fit-content;
+    font-size: 14pt;
+    border: none;
+    border-radius: 24px;
+    padding: 15pt;
+    cursor: pointer;
+  align-self: flex-end;
+
+}
+
+
+@media(width<400px){
+    .h1{
+        font-size: 35pt;
+    }
+    .heading{
+        font-size: 14pt;
+    }
+}

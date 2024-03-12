@@ -1,0 +1,248 @@
+
+
+.box{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    border: 2px solid #EB9456;
+    border-radius: 12px;
+    box-shadow: 24px;
+    padding: 40px;
+    background-color: #fafafa;
+  
+  
+}
+
+form  h1 i{
+    font-size: 30px;
+    color: #EB9456;
+    
+    
+ }
+
+ .heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .heading img{
+    width: 48px;
+    height: 48px;
+ }
+
+ .heading img:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+ }
+
+ .underline{
+    border:1px solid #EB9456;
+    width: 50%;
+    margin-top: 1em;
+ }
+
+
+.form{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+ }
+
+
+ 
+
+ .image-section{
+   width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 2em;
+    margin-top: 2em;
+    
+}
+
+.upload-button{
+    color: #EB9456;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+}
+
+.clear-button{
+    color: #fafafa;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    
+}
+
+/* .clear-button{
+    display: none;
+} */
+
+.clear-icon{
+    display: none;
+}
+
+
+
+.description-section{
+   width: 480px;
+    margin-top: 2em;
+    /* height: 420px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+
+
+.description-section  textarea{
+ resize: none;
+ font-size: 1.5em;
+ width: 480px;
+ height: 280px;
+ border: 1px solid #4d4d4f;
+ border-radius: 4px;
+
+}
+
+
+.description-section  textarea:focus{
+    outline: none !important;
+    border-color: #EB9456;
+   
+}
+
+ .cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+   
+}
+
+.image{
+    position: relative;
+    width: 100%;
+    /* height: 640px; */
+    height: 360px;
+    
+  max-width: 100%;
+    
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+}
+
+.imgMsgNoshow{
+    display: none;
+    
+}
+
+.desMsgNoshow{
+    display: none;
+    
+}
+
+.uploadingText{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.custom-loader {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:conic-gradient(#0000 10%,#fafafa);
+    mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1s infinite linear;
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1s infinite linear;
+  }
+  @keyframes s3 {to{transform: rotate(1turn)}}
+
+
+
+  @media(width<1100px){
+    .box{
+        height: 90vh;
+        max-width: 80vw;
+        overflow: scroll;
+    }
+    
+    .form{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        max-width: 100%;
+    }
+    .image-section{
+        height: 50vh;
+        max-width: 100%;
+    }
+    .description-section{
+        height: 30vh;
+        max-width: 100%;
+    }
+    .description-section textarea{
+        max-width: 100%;
+        font-size: 14pt;
+        padding: 0;
+    }
+    .buttons{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .upload-button{
+        max-width: fit-content;
+        font-size: 14pt;
+        padding: 0 6px;
+        height: 48px;
+    }
+    .upload-button span{
+        display: none;
+    }
+    .clear-button{
+        /* max-width: fit-content;
+        font-size: 14pt; */
+        display: none;
+    }
+    .clear-icon{
+        display: block;
+        background-color: #DB5F58;
+        height: 48px;
+    }
+   
+    .submit-button{
+        align-self: flex-end;
+        margin-top: 12px;
+    }
+  }

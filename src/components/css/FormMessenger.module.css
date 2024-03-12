@@ -1,0 +1,162 @@
+*{
+    z-index: 100;
+    
+}
+
+
+.msg{
+        display: flex;
+        position: fixed;
+        left: 50%;
+        width: 350px;
+        padding: 16px  ;
+        font-size: 20px;
+        font-weight: 400;
+        color: #406041;
+        background-color: #fafafa;
+        border: 2px solid #406041;
+        border-radius: 12px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+       flex-direction: row;
+       justify-content: space-evenly;
+       align-items: center;
+      
+       animation: slideIn 0.5s ;
+}
+
+.msg div  h1{
+    font-size: 20px;
+    font-weight: 700;
+    color: #406041;
+}
+
+.msg img{
+    width: 48px;
+    height: 48px;
+    margin-right: 16px;
+}
+
+.nomsg{
+    display: flex;
+    position: fixed;
+    left: 50%;
+    width: 350px;
+    padding: 16px  ;
+    font-size: 20px;
+    font-weight: 400;
+    color: #406041;
+    background-color: #fafafa;
+    border: 2px solid #406041;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+  
+   animation: slideOut 0.5s forwards;
+}
+
+.nomsg div  h1{
+    font-size: 20px;
+    font-weight: 700;
+    color: #406041;
+}
+
+.nomsg img{
+    width: 48px;
+    height: 48px;
+    margin-right: 16px;
+}
+
+
+.errmsg{
+    display: flex;
+    position: fixed;
+    left: 50%;
+    top: 0%;
+    width: 350px;
+    padding: 16px  ;
+    font-size: 20px;
+    font-weight: 400;
+    color: #DB5F58;
+    background-color: #fafafa;
+    border: 2px solid #DB5F58;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+  
+   animation: slideIn 0.5s ;
+}
+
+.errmsg div  h1{
+font-size: 20px;
+font-weight: 700;
+color: #DB5F58;
+}
+
+.errmsg img{
+width: 48px;
+height: 48px;
+margin-right: 16px;
+}
+
+
+.noerrmsg{
+    display: flex;
+    position: fixed;
+    left: 50%;
+    width: 350px;
+    padding: 16px  ;
+    font-size: 20px;
+    font-weight: 400;
+    color: #DB5F58;
+    background-color: #fafafa;
+    border: 2px solid #DB5F58;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+  
+   animation: slideOut 0.5s forwards;
+}
+
+.noerrmsg div  h1{
+    font-size: 20px;
+    font-weight: 700;
+    color: #DB5F58;
+}
+
+.noerrmsg img{
+    width: 48px;
+    height: 48px;
+    margin-right: 16px;
+}
+
+
+/* .msg:active{
+    animation: slideOut 1s;
+} */
+
+@keyframes slideIn {
+    0% {
+        display:none;transform: translateY(-50%);;
+    }
+    100% {
+        display: flex;transform: translateY(0);;
+    }
+  }
+
+
+  @keyframes slideOut {
+  100%{
+    
+    transform: translateY(-100%);
+    display:none; 
+  }
+       
+    
+  }
+
