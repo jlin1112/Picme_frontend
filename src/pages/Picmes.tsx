@@ -126,6 +126,7 @@ const Picmes: React.FC = () => {
   
   Axios.defaults.withCredentials = true;
   useEffect(() => {
+    console.log(`fetch ${apiUrl}/picmes`)
     setIsLoading(true);
     Axios.post(`${apiUrl}/picmes`, { page: currentPage })
       .then((response) => {

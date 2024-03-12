@@ -32,6 +32,7 @@ const App: React.FC = () => {
   const [authenticated, setAuthenticated] = useState(false);
 
   const apiUrl = process.env.REACT_APP_API_URL;
+  
 
   Axios.defaults.withCredentials = true;
   useEffect(() => {
