@@ -25,10 +25,7 @@ export default function NavMenu({
 
   const apiUrl = process.env.REACT_APP_API_URL;
 
-  function deleteCookie(name:string) {
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-}
- 
+
 
   Axios.defaults.withCredentials = true;
   function handleLogOut() {
@@ -36,7 +33,7 @@ export default function NavMenu({
     Axios.delete(`https://picme.onrender.com/logout`)
       .then((response) => {
         
-        deleteCookie("token");
+       
 
         userAuthProps.removeCookie("userInfo");
         userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com'});
