@@ -1,5 +1,5 @@
 import module from "./css/NavMenu.module.css";
-import { useNavigate } from "react-router-dom";
+import { BrowserRouter, useNavigate } from "react-router-dom";
 import Axios from "axios";
 import { useUser } from "../context/userContext";
 import { useState } from "react";
@@ -25,7 +25,16 @@ export default function NavMenu({
 
   const apiUrl = process.env.REACT_APP_API_URL;
 
-
+  const getCookie = (name:string) => {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split('=');
+        if (cookieName.trim() === name) {
+            return cookieValue;
+        }
+    }
+    return null;
+};
  
 
   Axios.defaults.withCredentials = true;
@@ -33,7 +42,10 @@ export default function NavMenu({
     setIsLoggingOut(true);
     Axios.delete(`https://picme.onrender.com/logout`)
       .then((response) => {
-       
+        
+        const token = getCookie('token');
+        console.log('Token:', token);
+
         userAuthProps.removeCookie("userInfo");
         userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com'});
         userAuthProps.setUser(null);
