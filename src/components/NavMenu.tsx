@@ -33,7 +33,8 @@ export default function NavMenu({
     Axios.delete(`https://picme.onrender.com/logout`)
       .then((response) => {
         
-        
+        localStorage.removeItem('token')
+        localStorage.removeItem('tokenExpiration')
 
         userAuthProps.removeCookie("userInfo");
         // userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com'});

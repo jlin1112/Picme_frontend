@@ -35,7 +35,7 @@ export default function LoginForm({
       stayLoggedIn,
     })
       .then(function (response) {
-      
+        const tokenExpiration = Date.now() + (7 * 24 * 60 * 60 * 1000)
         setUser({
           username: response.data.username,
           id: response.data.id,
@@ -44,6 +44,7 @@ export default function LoginForm({
           likedPost: response.data.likedPost,
         });
         localStorage.setItem('token',response.data.token)
+        localStorage.setItem('tokenExpiration',tokenExpiration.toString())
         handleLoginFormClose();
         setIsLogging(false);
         // navigate(0);
