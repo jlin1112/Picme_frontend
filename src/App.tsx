@@ -37,7 +37,7 @@ const App: React.FC = () => {
   Axios.defaults.withCredentials = true;
   useEffect(() => {
     // setUser(prev => cookies.userInfo)
-   
+   console.log(document.cookie)
     Axios.get(`${apiUrl}/picmes/verify`)
       .then((response) => {
         const { userExist, username, id, avatar, isAdmin, likedPost, followed } = response.data;
