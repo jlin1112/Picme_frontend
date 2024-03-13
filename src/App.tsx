@@ -44,7 +44,7 @@ const App: React.FC = () => {
         if (userExist) {
           setUser({ username, id , avatar, isAdmin, likedPost, followed });
           setAuthenticated(true);
-          console.log('user')
+          
         }
       })
       .catch((error) => {
