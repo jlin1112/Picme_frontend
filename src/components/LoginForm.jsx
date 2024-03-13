@@ -43,6 +43,7 @@ export default function LoginForm({
           isAdmin: response.data.isAdmin,
           likedPost: response.data.likedPost,
         });
+        localStorage.setItem('token',response.data.token)
         handleLoginFormClose();
         setIsLogging(false);
         // navigate(0);
