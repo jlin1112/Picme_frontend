@@ -25,6 +25,10 @@ export default function NavMenu({
   const apiUrl = process.env.REACT_APP_API_URL;
 
 
+  function clearCookie(name:string) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
   Axios.defaults.withCredentials = true;
   function handleLogOut() {
     setIsLoggingOut(true);
@@ -35,7 +39,7 @@ export default function NavMenu({
         userAuthProps.removeCookie("token");
         userAuthProps.setUser(null);
         userAuthProps.setAuthenticated(false);
-        
+        clearCookie("token");
         setIsLoggingOut(false);
       })
       .catch((error) => {
