@@ -30,14 +30,13 @@ export default function NavMenu({
   Axios.defaults.withCredentials = true;
   function handleLogOut() {
     setIsLoggingOut(true);
-    Axios.delete(`https://picme.onrender.com/logout`)
+    Axios.delete(`${apiUrl}/logout`)
       .then((response) => {
         
-        localStorage.removeItem('token')
-        localStorage.removeItem('tokenExpiration')
+       
 
         userAuthProps.removeCookie("userInfo");
-        // userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com'});
+        userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com'});
         userAuthProps.setUser(null);
         userAuthProps.setAuthenticated(false);
         // clearCookie("token");

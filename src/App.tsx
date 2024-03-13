@@ -14,10 +14,9 @@ import Profile from "./pages/Profile";
 import Search from "./pages/Search";
 import EmailVerify from "./pages/EmailVerify";
 
-
 type Token = {
-  username: string | '';
-  id: string | '';
+  username: string | "";
+  id: string | "";
   avatar: number | null;
   isAdmin: boolean | false;
   likedPost: Array<string> | [];
@@ -26,33 +25,38 @@ type Token = {
 
 const App: React.FC = () => {
   const [user, setUser] = useState<Token | null>(null);
-  const [cookies, setCookie, removeCookie] = useCookies(
-    ["token"] || undefined
-  );
+  const [cookies, setCookie, removeCookie] = useCookies(["token"] || undefined);
   const [authenticated, setAuthenticated] = useState(false);
 
   const apiUrl = process.env.REACT_APP_API_URL;
-  
 
   Axios.defaults.withCredentials = true;
   useEffect(() => {
     // setUser(prev => cookies.userInfo)
-   
+
     Axios.get(`${apiUrl}/picmes/verify`)
       .then((response) => {
-        const { userExist, username, id, avatar, isAdmin, likedPost, followed } = response.data;
+        const {
+          userExist,
+          username,
+          id,
+          avatar,
+          isAdmin,
+          likedPost,
+          followed,
+        } = response.data;
         if (userExist) {
-          setUser({ username, id , avatar, isAdmin, likedPost, followed });
+          setUser({ username, id, avatar, isAdmin, likedPost, followed });
           setAuthenticated(true);
-          
         }
       })
       .catch((error) => {
-        console.log(error)
-        return
-      });
+        
+        return;
+      })
+   ;
   }, [apiUrl]);
- 
+
   return (
     <>
       <UserContext.Provider
@@ -79,8 +83,7 @@ const App: React.FC = () => {
             <Route path="/picmes/login" element={<Login />} />
             <Route path="/picmes/profile/:id" element={<Profile />} />
             <Route path="/picmes/search" element={<Search />} />
-            <Route path="/picmes/verifyEmail" element={<EmailVerify/>} />
-           
+            <Route path="/picmes/verifyEmail" element={<EmailVerify />} />
           </Route>
 
           <Route path="/error" element={<Error />} />

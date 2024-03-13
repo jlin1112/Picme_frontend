@@ -30,7 +30,7 @@ const Login: React.FC = () => {
   Axios.defaults.withCredentials = true;
   function onSubmit(data: DataToBeSubmitted) {
     setIsLogging(true);
-    const { email, password, stayLoggedIn } = data;
+    const { email, password, stayLoggedIn=false } = data;
     Axios.post(`${apiUrl}/picmes/login`, {
       email,
       password,
@@ -139,14 +139,14 @@ const Login: React.FC = () => {
                 <i style={{ color: "#DB5F58" }}>{errors.password?.message}</i>
               </p>
             </div>
-            <div className={module.checkbox}>
+            {/* <div className={module.checkbox}>
               <input
                 type="checkbox"
                 id="checkbox"
                 {...register("stayLoggedIn")}
               />
               <label htmlFor="checkbox">Stay Logged In for 7 days</label>
-            </div>
+            </div> */}
             <div className={module.text}>
               <Link to="/picmes/register" style={{ textDecoration: "none" }}>
                 <p>

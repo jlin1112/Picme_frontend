@@ -27,7 +27,7 @@ export default function LoginForm({
 
   Axios.defaults.withCredentials = true;
   function onSubmit(data) {
-    const { email, password, stayLoggedIn } = data;
+    const { email, password, stayLoggedIn=false } = data;
     setIsLogging(true);
     Axios.post(`${apiUrl}/picmes/login`, {
       email,
@@ -43,12 +43,11 @@ export default function LoginForm({
           isAdmin: response.data.isAdmin,
           likedPost: response.data.likedPost,
         });
-        localStorage.setItem('token',response.data.token)
-        localStorage.setItem('tokenExpiration',response.data.tokenExpiration)
+       
        
         handleLoginFormClose();
         setIsLogging(false);
-        // navigate(0);
+        navigate(0);
       })
       .catch(function (error) {
         
@@ -136,14 +135,14 @@ export default function LoginForm({
             <p>
               <i style={{ color: "#DB5F58" }}>{errors.password?.message}</i>
             </p>
-            <div className={module.checkbox}>
+            {/* <div className={module.checkbox}>
               <input
                 type="checkbox"
                 id="checkbox"
                 {...register("stayLoggedIn")}
               />
               <label htmlFor="checkbox">Stay Logged In for 7 days</label>
-            </div>
+            </div> */}
           </div>
           <div className={module.button}>
             <Button
