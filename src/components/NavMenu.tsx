@@ -35,7 +35,7 @@ export default function NavMenu({
       .then((response) => {
        
         userAuthProps.removeCookie("userInfo");
-        userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com', secure:true,httpOnly:true,sameSite:'none'});
+        userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com'});
         userAuthProps.setUser(null);
         userAuthProps.setAuthenticated(false);
         // clearCookie("token");
