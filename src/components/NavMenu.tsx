@@ -6,6 +6,7 @@ import { useState } from "react";
 import Modal from "react-modal";
 import Guidelines from "./Guidelines";
 import Author from "./Author";
+import path from "path";
 
 export default function NavMenu({
   handleModalProps,
@@ -25,18 +26,16 @@ export default function NavMenu({
   const apiUrl = process.env.REACT_APP_API_URL;
 
 
-  function clearCookie(name:string) {
-    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-}
+ 
 
   Axios.defaults.withCredentials = true;
   function handleLogOut() {
     setIsLoggingOut(true);
     Axios.delete(`https://picme.onrender.com/logout`)
       .then((response) => {
-        console.log('clear cookie')
+       
         userAuthProps.removeCookie("userInfo");
-        userAuthProps.removeCookie("token");
+        userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com', secure:true,httpOnly:true,sameSite:'none'});
         userAuthProps.setUser(null);
         userAuthProps.setAuthenticated(false);
         // clearCookie("token");
