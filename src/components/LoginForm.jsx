@@ -45,7 +45,7 @@ export default function LoginForm({
         });
         handleLoginFormClose();
         setIsLogging(false);
-        navigate(0);
+        // navigate(0);
       })
       .catch(function (error) {
         
