@@ -128,7 +128,7 @@ const Picmes: React.FC = () => {
   useEffect(() => {
     
     setIsLoading(true);
-    Axios.post(`https://picme-backend.vercel.app/picmes`, { page: currentPage })
+    Axios.post(`https://picme.onrender.com`, { page: currentPage })
       .then((response) => {
         console.log('data')
         setData(response.data.picmes);
