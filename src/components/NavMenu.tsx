@@ -25,16 +25,9 @@ export default function NavMenu({
 
   const apiUrl = process.env.REACT_APP_API_URL;
 
-  const getCookie = (name:string) => {
-    const cookies = document.cookie.split(';');
-    for (let cookie of cookies) {
-        const [cookieName, cookieValue] = cookie.split('=');
-        if (cookieName.trim() === name) {
-            return cookieValue;
-        }
-    }
-    return null;
-};
+  function deleteCookie(name:string) {
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
  
 
   Axios.defaults.withCredentials = true;
@@ -43,8 +36,7 @@ export default function NavMenu({
     Axios.delete(`https://picme.onrender.com/logout`)
       .then((response) => {
         
-        const token = getCookie('token');
-        console.log('Token:', token);
+        deleteCookie("token");
 
         userAuthProps.removeCookie("userInfo");
         userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com'});
