@@ -20,8 +20,8 @@
    }
   
    .custom-loader {
-    width:200px;
-    height:200px;
+    width:120px;
+    height:120px;
     border-radius:50%;
     background:conic-gradient(#0000 10%,#ef8453);
     mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);

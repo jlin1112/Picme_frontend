@@ -13,22 +13,22 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5em;
+    gap: 0.1em;
 }
 
 .top .user-info h3 b{
-    font-size: 1em;
+    font-size: 10pt;
 }
 
 .top .user-info .avatar{
     position: relative;
-    width: 55px;
-    height: 55px;
+    width: 35px;
+    height: 35px;
   
    
     border-radius: 50%;
     overflow: hidden;
-    margin-right: 16px;
+    margin-right: 8px;
 }
 
 .cover{

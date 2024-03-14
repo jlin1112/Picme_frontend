@@ -35,7 +35,7 @@ export default function InfoInput({
 
     if (validateSuccess) {
       //Axios verify if username or email already existed
-      Axios.post(`${apiUrl}/picmes/verifysignup`, {
+      Axios.post(`${apiUrl}picmes/verifysignup`, {
         username,
         email,
       })
@@ -61,7 +61,7 @@ export default function InfoInput({
     <>
       {message && (
         <p>
-          <i style={{ color: "#DB5F58" }}>{message}</i>
+          <i style={{ color: "#DB5F58",fontSize:'10pt' }}>{message}</i>
         </p>
       )}
       <div className={module.form}>

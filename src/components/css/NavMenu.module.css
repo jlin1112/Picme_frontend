@@ -13,7 +13,8 @@
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px  1.95px 2.6px;
     top: 0; /* this is required for "sticky" to work */
     /* position: sticky; */
-  
+  width: 255px;
+  overflow-y: scroll;
   
 }
 
@@ -27,7 +28,7 @@
     align-items: flex-start;
     /* width: 350px; */
     height: 100vh;
-    padding:  40px 10px 30px 10px;
+    padding:  28px 7px 21px 7px;
     background: #ffffff;
     border-right: 1px solid #dbdbdb;
     transition: 0.3s;
@@ -39,8 +40,8 @@
 
 .sidebar-header{
     width:100%;
-    margin-bottom: 24px;
-    border-bottom: 2px solid;
+    margin-bottom: 14px;
+    border-bottom: 1.5px solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(to right, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b);
     cursor: pointer;
@@ -51,11 +52,11 @@
 }
 
 .logo-img{
-    margin-left: 40px;
+    margin-left: 30px;
     /* height:48px; */
-    width: 250px;
+    width: 160px;
     
-    margin-bottom: 24px;
+    margin-bottom: 15px;
     
 }
 
@@ -63,7 +64,7 @@
 
 
 .sidebar button {
-    height:80px;
+    height:55px;
     background:transparent;
     border:0;
     padding: 0;
@@ -72,19 +73,28 @@
     cursor:pointer;
 }
 
+.sidebar button span img{
+    width: 32px;
+    height: 32px;
+}
+
+.sidebar button span span{
+    font-size: 10pt;
+}
+
 
 
 
 .sidebar button > span {
     display: flex;
     align-items: center;
-    gap: 12px;
-    height: 68px;
-    padding: 0 20px 0 20px;
+    gap: 7px;
+    height: 50px;
+    padding: 0 14px 0 14px;
  
-    margin: 0 10px;
+    margin: 0 7px;
  
-    border-radius: 24px;
+    border-radius: 15px;
     line-height: 1;
     transition: 0.3s;
   
@@ -94,7 +104,7 @@
 
 
 .sidebar .button:hover {
-   border-radius: 24px;
+   border-radius: 15px;
     background-image: linear-gradient(to right, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b) ; 
 }
 
@@ -125,7 +135,7 @@
     width: 100%;
 }
 
-@media (width < 1500px) {
+@media (width < 1250px) {
     .logo-img{
         display:none
     }

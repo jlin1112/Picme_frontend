@@ -30,6 +30,7 @@ export default function Profile(props: any) {
   const { user, removeCookie, setAuthenticated, setUser } = useUser();
   const userId = user?.id;
   const userAuthProps = { user, removeCookie, setAuthenticated, setUser };
+  const [isLoggingOut, setIsLoggingOut] = useState(false)
 
   const [image, setImage] = useState(null);
   const [imageToUpload, setImageToUpload] = useState(null);
@@ -91,7 +92,7 @@ export default function Profile(props: any) {
   function handleLikedList(e: React.MouseEvent) {
     setActive("2");
     setIsLoading(true);
-    Axios.get(`${apiUrl}/picmes/likedList/${id}`)
+    Axios.get(`${apiUrl}picmes/likedList/${id}`)
       .then(function (response) {
         setPicList(response.data);
         setTotalPage(response.data.length);
@@ -106,7 +107,7 @@ export default function Profile(props: any) {
   function handlePicList(e: React.MouseEvent) {
     setActive("1");
     setIsLoading(true);
-    Axios.get(`${apiUrl}/picmes/profile/${id}`)
+    Axios.get(`${apiUrl}picmes/profile/${id}`)
       .then(function (response) {
         setPicList(response.data.picList);
         setTotalPage(response.data.picList.length);
@@ -128,7 +129,7 @@ export default function Profile(props: any) {
   Axios.defaults.withCredentials = true;
   useEffect(() => {
     setIsLoading(true);
-    Axios.get(`${apiUrl}/picmes/profile/${id}`)
+    Axios.get(`${apiUrl}picmes/profile/${id}`)
       .then(function (response) {
         setAvatar(response.data.avatar);
         setUsername(response.data.username);
@@ -219,6 +220,7 @@ export default function Profile(props: any) {
           <NavMenu
             handleModalProps={handleModalProps}
             userAuthProps={userAuthProps}
+            setIsLoggingOut={setIsLoggingOut}
           />
         </div>
 
@@ -256,8 +258,7 @@ export default function Profile(props: any) {
               <div
                 style={{
                   fontWeight: "700",
-                  color: "#fafafa",
-                  fontSize: "1.5em",
+                  color: "#fafafa"
                 }}
               >
                 {username}

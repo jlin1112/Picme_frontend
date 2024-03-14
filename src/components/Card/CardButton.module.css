@@ -6,8 +6,8 @@
 .button{
     background-color: transparent;
     border: none;
-    font-size: 1.25em;
-    margin: 0 12px;
+    font-size: 10pt;
+    margin: 0 6px;
     cursor: pointer;
 }
 
@@ -15,20 +15,20 @@
     background-color: #355070;
     color: #fafafa;
     border: none;
-    font-size: 1.25em;
-    margin: 0 12px;
+    font-size: 10pt;
+    margin: 0 6px;
     cursor: pointer;
-    border-radius: 24px;
-    padding: 5px 10px;
+    border-radius: 16px;
+    padding: 3px 6px;
 }
 
 .followed-button{
     background-color: transparent;
     color: #355070;
     border: 1px solid #355070;
-    font-size: 1.25em;
-    margin: 0 12px;
+    font-size: 10pt;
+    margin: 0 6px;
     cursor: pointer;
-    border-radius: 24px;
-    padding: 5px 10px;
+    border-radius: 16px;
+    padding: 3px 6px;
 }

@@ -11,14 +11,14 @@
       gap: 2em;
      }
      .pagination > *{
-      font-size: 1.5em;
+      font-size: 12pt;
       cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
      }
      .active-page{
-      border:2px solid #355070;
+      border:1.5px solid #355070;
       width: 2em;
       height: 2em;
       border-radius: 50%;

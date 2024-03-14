@@ -16,8 +16,8 @@ export default function UserBanner() {
             }
             className={module.cover}
             alt="avatar"
-            width={"110px"}
-            height={"110px"}
+            width={"70px"}
+            height={"70px"}
             style={user?.avatar ? { padding: "0px" } : { padding: "5px" }}
           />
           </Link>

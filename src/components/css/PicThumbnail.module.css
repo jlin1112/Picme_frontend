@@ -1,12 +1,12 @@
 .image{
     position: relative;
-    min-width: 360px;
+    min-width: 240px;
     /* height: 640px; */
-    min-height: 360px;
-    margin-top: 10px ;
+    min-height: 240px;
+    margin-top: 7px ;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.15) 4px 4px 5.2px;
-    border-radius: 12px;
+    border-radius: 8px;
     transition: 0.3s;
   }
 
@@ -26,8 +26,8 @@
 
   @media(width<500px){
     .image{
-      min-width: 300px;
-      min-height:300px;
+      min-width: 180px;
+      min-height:180px;
       box-shadow: none;
     }
   }

@@ -1,52 +1,4 @@
-.box{
-    display: inline-block;
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     border: 2px solid #EB9456;
-     border-radius: 12px;
-     box-shadow: 24px;
-     padding: 40px;
-     background-color: #fafafa;
-     width: 25%;
-   min-width: 350px;
-   
- }
- 
- 
- form  h1 i{
-     font-size: 30px;
-     color: #EB9456;
-     
-     
-  }
- 
-  .heading{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
- }
- 
- .heading img{
-    width: 48px;
-    height: 48px;
- }
- 
- /* .heading img:hover{
-    transform: scale(1.1);
-    transition: 0.2s;
- } */
- 
- 
-  .underline{
-     border:1px solid #EB9456;
-     width: 100%;
-     margin: 1em 0;
-  }
- 
- 
+
  .form{
      display: flex;
      flex-direction: column;
@@ -57,21 +9,24 @@
  
   .input {
      
-     margin: 1em 0 1em 0 ;
+     margin: .7em 0 .7em 0 ;
     
+  }
+
+  .input p i{
+   font-size: 10pt;
   }
  
   .textfield{
      width: 100%;
-    
-     
+ 
   }
   .button{
-     margin: 1em 0 1em auto;
+     margin: .7em 0 .7em auto;
      display: flex;
      flex-direction: row;
      align-items: center;
-     gap: 20px;
+     gap: 12px;
      flex-wrap: wrap;
      width: 50%;
  
@@ -79,7 +34,7 @@
  
  .button button{
      flex: 1;
-     height: 50px;
+     height: 30px;
  }
  
  
@@ -91,8 +46,8 @@
 
  .text{
    cursor: pointer;
-   margin: 10px 0;
-   font-size: 1.25em;
+   margin: 7px 0;
+   font-size: 10pt;
  }
  .text:hover p, .text:hover i{
    color: #EB9456;

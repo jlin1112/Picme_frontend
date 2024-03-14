@@ -15,13 +15,13 @@ export default function ConfirmRegister({
     <>
       {message && (
         <p>
-          <i style={{ color: "#DB5F58" }}>{message}</i>
+          <i style={{ color: "#DB5F58",fontSize:'10pt' }}>{message}</i>
         </p>
       )}
       <div className={module.content}>
         <div className={module.profile}>
         <h1>
-        <i style={{ color: "#eb9456" }}>Confirm</i> 
+        <i style={{ color: "#eb9456",fontSize:'15pt' }}>Confirm</i> 
       </h1>
           <div className={module.card}>
             <div className={module.avatar}>

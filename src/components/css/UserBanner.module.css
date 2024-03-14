@@ -7,7 +7,7 @@
 /*    
     background-image: linear-gradient(to right, #f9f3e0,#e8a459,#eb9456,#ef8453); */
     background-image: linear-gradient(to left, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b);
-    height: 145px;
+    height: 95px;
     flex-direction: row-reverse;
     align-items: center;
    
@@ -21,19 +21,19 @@
     justify-content: space-around;
     
     height: 100%;
-    margin: 0 2em;
+    margin: 0 1em;
     
 }
 
 
 .avatar{
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 68px;
+    height: 68px;
     border-radius: 50%;
     overflow: hidden;
    cursor: pointer;
-  
+  margin-top: 2px;
    
 }
 
@@ -45,13 +45,20 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border:2px solid #eaac8b;
+    border:1.4px solid #eaac8b;
    
 }
 
 .username p{
     color: #ffffff;
     cursor: pointer;
+    font-size: 10pt;
+}
+
+.username span{
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 10pt;
 }
 
 
@@ -61,8 +68,17 @@
     border: 2px solid #eaac8b;
     border-radius: 24px;
     background-color: #fafafa;
-    padding:  .5em 2em;
+    /* padding:  .5em 2em; */
     cursor: pointer;
     text-decoration: none;
-    
+    width: 80px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-link i{
+    font-size: 8pt;
 }

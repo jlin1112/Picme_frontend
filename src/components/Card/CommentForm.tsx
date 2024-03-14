@@ -48,7 +48,7 @@ export default function CommentForm(props: {
       return
     } 
     
-    Axios.post(`${apiUrl}/picmes/${props.picId}/comment`, {
+    Axios.post(`${apiUrl}picmes/${props.picId}/comment`, {
       comment,
       author,
     })
@@ -71,7 +71,7 @@ export default function CommentForm(props: {
     // const liked = event.target.dataset.liked;
     if (!liked) {
      
-      Axios.post(`${apiUrl}/picmes/${props.picId}/like`, {
+      Axios.post(`${apiUrl}picmes/${props.picId}/like`, {
         userId        
       })
         .then(function (response) {
@@ -86,7 +86,7 @@ export default function CommentForm(props: {
         });
     } else if (liked) {
    
-      Axios.post(`${apiUrl}/picmes/${props.picId}/unlike`, {
+      Axios.post(`${apiUrl}picmes/${props.picId}/unlike`, {
         userId
       })
         .then(function (response) {
@@ -102,7 +102,7 @@ export default function CommentForm(props: {
   };
 
 
-  Axios.post(`${apiUrl}/picmes/verifyLiked/${props.user?.id}`,{picId})
+  Axios.post(`${apiUrl}picmes/verifyLiked/${props.user?.id}`,{picId})
       .then(function (response) {
         setLiked(response.data)
       })
@@ -132,8 +132,8 @@ export default function CommentForm(props: {
                 src={`/avatar/${props.user?.avatar}.png`}
                 className={module["comment-cover"]}
                 alt="avatar"
-                width={"55px"}
-                height={"55px"}
+                width={"30px"}
+                height={"30px"}
               />
             </div>
           </label>
@@ -161,9 +161,9 @@ export default function CommentForm(props: {
               borderColor: "#355070",
               backgroundColor: "#fafafa",
               transition: "0.05s",
-              height: "40px",
-              borderRadius: "24px",
-              fontSize: "20px",
+              height: "24px",
+              borderRadius: "16px",
+              fontSize: "10pt",
               "&:hover": {
                 borderColor: "#355070",
               },

@@ -22,8 +22,8 @@ export default function CommentItem(props: {
             src={`/avatar/${props.avatar}.png`}
             className={module["comment-cover"]}
             alt="avatar"
-            width={"55px"}
-            height={"55px"}
+            // width={"55px"}
+            // height={"55px"}
           />
         </div>
         <b>{props.username}</b> - <span>{props.comment}</span>

@@ -35,7 +35,7 @@ export default function CardDescription(props: {
       setError({ isError: true, message: "Description required" });
       setIsEditing(false);
     } else {
-      Axios.patch(`${apiUrl}/picmes/${picId}`, {
+      Axios.patch(`${apiUrl}picmes/${picId}`, {
         description,
         currentUserId,
       })

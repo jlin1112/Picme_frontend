@@ -1,24 +1,25 @@
 .container{
-  padding: 16pt;
+  padding: 8pt;
 }
 
 .container h1{
     color: transparent;
     background-image: linear-gradient(to right, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b) ; 
     background-clip: text;
+    font-size: 15pt;
 }
 
 .container p{
-    font-size: 16pt;
-   line-height: 24pt;
-   padding-top: 16pt;
+    font-size: 10pt;
+   line-height: 15pt;
+   padding-top: 10pt;
 }
 
 .container p  span{
-    font-size: 18pt;
+    font-size: 12pt;
     font-weight: 700;
 }
 
 .container b{
-    font-size: 20pt;
+    font-size: 13pt;
 }

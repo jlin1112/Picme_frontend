@@ -130,7 +130,7 @@ export default function NewPicmeForm({
                   picmeUploadProps.requireImage ? "" : module.imgMsgNoshow
                 }
               >
-                <i style={{ color: "#DB5F58" }}>Image is required</i>
+                <i style={{ color: "#DB5F58",fontSize:'10pt'}}>Image is required</i>
               </p>
               {picmeUploadProps.image ? (
     
@@ -141,7 +141,7 @@ export default function NewPicmeForm({
                 />
               ) : (
                 <p>
-                  <i style={{ color: "#EB9456", fontWeight: "500",fontSize:'1.25em' }}>
+                  <i style={{ color: "#EB9456", fontWeight: "500",fontSize:'10pt' }}>
                     Please upload an image
                   </i>
                 </p>
@@ -209,7 +209,7 @@ export default function NewPicmeForm({
                 onChange={handleImage}
                 disabled={isUploading? true : false}
               >
-               Upload file
+               <span>Upload file</span>
                 <VisuallyHiddenInput type="file"  accept=".jpg,.png,.jpeg" />
 
               </Button>
@@ -229,7 +229,7 @@ export default function NewPicmeForm({
                 picmeUploadProps.requireDescription ? "" : module.desMsgNoshow
               }
             >
-              <i style={{ color: "#DB5F58", fontWeight: "500" }}>
+              <i style={{ color: "#DB5F58", fontWeight: "500", fontSize:'10pt' }}>
                 Description required
               </i>
             </p>
@@ -242,7 +242,7 @@ export default function NewPicmeForm({
               sx={{
                 backgroundColor: "#eb9456",
                 transition: "0.2s",
-                height: "100px",
+                height: "60px",
                 "&:hover": {
                   backgroundColor: "#eb9456",
                   filter: " brightness(1.05)",
@@ -256,10 +256,10 @@ export default function NewPicmeForm({
               {isUploading ? (
                 <div className={module.uploadingText}>
                   <div className={module["custom-loader"]}></div>
-                  <span><i style={{ color: "#fafafa"}}>Uploading...</i></span>
+                  <span><i style={{ color: "#fafafa", fontSize:"10pt"}}>Uploading...</i></span>
                 </div>
               ) : (
-                <i style={{ color: "#fafafa",fontSize:'1.5em' }}>Submit</i>
+                <i style={{ color: "#fafafa",fontSize:'10pt' }}>Submit</i>
               )}
             </Button>
           </div>

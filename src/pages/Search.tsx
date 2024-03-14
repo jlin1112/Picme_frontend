@@ -31,6 +31,8 @@ export default function Search () {
       const [error, setError] = useState(false);
       const { user, removeCookie, setAuthenticated, setUser } = useUser();
       const userAuthProps = { user, removeCookie, setAuthenticated, setUser };
+
+      const [isLoggingOut, setIsLoggingOut] = useState(false)
     
       //page
       const [currentPage, setCurrentPage] = useState(0);
@@ -166,6 +168,7 @@ export default function Search () {
             handleModalProps={handleModalProps}
             messageProps={messageProps}
             userAuthProps={userAuthProps}
+            setIsLoggingOut={setIsLoggingOut}
           />
         </div>
   

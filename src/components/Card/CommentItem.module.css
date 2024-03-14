@@ -3,13 +3,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 12px 0;
+    margin: 6px 0;
 }
 
 .single-comment span{
  
         display: inline-block;
-        max-width: 300px;
+        max-width: 200px;
        height: fit-content;
    
  word-wrap: break-word;
@@ -21,8 +21,8 @@
 
 .comment-avatar{
     position: relative;
-    width: 55px;
-    height: 55px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     overflow: hidden;
     display: inline-block;
@@ -43,5 +43,5 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }

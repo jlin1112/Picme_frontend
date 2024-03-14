@@ -27,15 +27,15 @@ export default function LoginForm({
 
   Axios.defaults.withCredentials = true;
   function onSubmit(data) {
-    const { email, password, stayLoggedIn=false } = data;
+    const { email, password, stayLoggedIn } = data;
     setIsLogging(true);
-    Axios.post(`${apiUrl}/picmes/login`, {
+    Axios.post(`${apiUrl}picmes/login`, {
       email,
       password,
       stayLoggedIn,
     })
       .then(function (response) {
-        
+      
         setUser({
           username: response.data.username,
           id: response.data.id,
@@ -43,8 +43,6 @@ export default function LoginForm({
           isAdmin: response.data.isAdmin,
           likedPost: response.data.likedPost,
         });
-       
-       
         handleLoginFormClose();
         setIsLogging(false);
         navigate(0);
@@ -84,6 +82,7 @@ export default function LoginForm({
                 sx: { color: "#4d4d4f", "&.Mui-focused": { color: "#4d4d4f" } },
               }}
               sx={{
+                
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
                     borderColor: "#4d4d4f", // default
@@ -119,6 +118,7 @@ export default function LoginForm({
                 sx: { color: "#4d4d4f", "&.Mui-focused": { color: "#4d4d4f" } },
               }}
               sx={{
+                
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
                     borderColor: "#4d4d4f", // default
@@ -167,7 +167,7 @@ export default function LoginForm({
           </div>
           <span>
               <Link to="/picmes/register">
-                <i>No account yet? Register</i>
+                <i style={{fontSize:'10pt'}}>No account yet? Register</i>
               </Link>
             </span>
         </div>

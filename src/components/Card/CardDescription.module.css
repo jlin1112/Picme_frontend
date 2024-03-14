@@ -2,18 +2,18 @@
     font-weight: 400;
     margin-top: 5px;
     overflow: hidden;
-    font-size: 1.25em;
+    font-size: 10pt;
 }
 
 .edit-description{
     width: 100%;
-    height: 100px;
-    padding: 0 1em ;
+    height: 60px;
+    padding: 0 .6em ;
     resize: none;
     margin-top: 5px;
-    font-size: 1.5em;
+    font-size: 10pt;
     font-weight: 400;
-   border-radius: 12px;
+   border-radius: 6px;
 }
 
 .edit-buttons{
@@ -24,10 +24,10 @@
 .edit-buttons button{
     background-color: transparent;
     border: none;
-    font-size: 1.25em;
-    margin: 5px 1em;
-   width: 100px;
-    border-radius: 12px;
-    height: 50px;
+    font-size: 10pt;
+    margin: 3px .7em;
+   width: 60px;
+    border-radius: 6px;
+    height: 30px;
     cursor: pointer;
 }

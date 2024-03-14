@@ -3,22 +3,7 @@
     width: 100vw;
     min-width: 350px;
     height: 100vh;
-    /* background: rgb(53, 80, 112,0.8); */
-    /* background: linear-gradient(35deg, rgba(229,181,93,1) 20%, rgba(239,132,83,1) 100%); */
-    /* background-image: linear-gradient(35deg, #355070,#6d597a,#b56576,#e56b6f,#e88c7d,#eaac8b); */
-    /* background-color: #ffebcd; */
-    /* background: hsla(213, 36%, 32%, 1); */
-
-/* background: linear-gradient(45deg, hsla(213, 36%, 32%, 1) 15%, hsla(36, 100%, 90%, 1) 83%);
-
-background: -moz-linear-gradient(45deg, hsla(213, 36%, 32%, 1) 15%, hsla(36, 100%, 90%, 1) 83%);
-
-background: -webkit-linear-gradient(45deg, hsla(213, 36%, 32%, 1) 15%, hsla(36, 100%, 90%, 1) 83%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#355070", endColorstr="#FFEBCD", GradientType=1 ); */
     transition: 0s;
-
-    /* background-image: linear-gradient(to right top, #e88c7d, #e9927f, #e99881, #ea9e83, #eaa486, #ecac8c, #edb492, #efbc99, #f3c8a5, #f6d4b1, #fae0bf, #ffebcd); */
     background-color: #ffebcd;
 }
 .box{
@@ -27,7 +12,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#355070", en
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
-     border: 2px solid #EB9456;
+     border: 1.5px solid #EB9456;
      border-radius: 12px;
      box-shadow: 24px;
      padding: 40px;
@@ -39,8 +24,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#355070", en
 
 
 
-form  h1 i{
-    font-size: 30px;
+.heading i{
+    font-size: 15pt;
     color: #EB9456;
     
     
@@ -58,7 +43,7 @@ form  h1 i{
  .underline{
     border:1px solid #EB9456;
     width: 100%;
-    margin: 1em 0;
+    margin: .7em 0;
  }
 
  .form{
@@ -70,9 +55,11 @@ form  h1 i{
  }
 
  .input {
-    
-    margin: 1em 0 1em 0 ;
-   
+    margin: .7em 0 .7em 0 ;
+ }
+
+ .input p i {
+   font-size: 10pt;
  }
 
  .textfield{
@@ -81,11 +68,11 @@ form  h1 i{
     
  }
  .button{
-    margin: 1em 0 1em auto;
+    margin: .7em 0 .7em auto;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
     flex-wrap: wrap;
     width: 50%;
    
@@ -94,7 +81,11 @@ form  h1 i{
 
 .button button{
     flex: 1;
-    height: 50px;
+    height: 35px;
+}
+
+.button span{
+   font-size: 8pt;
 }
 
 
@@ -107,8 +98,8 @@ form  h1 i{
 
 .text{
   cursor: pointer;
-  margin: 10px 0;
-  font-size: 1.25em;
+  margin: 6px 0;
+  font-size: 10pt;
   text-decoration: none;
 }
 .text:hover p, .text:hover i{

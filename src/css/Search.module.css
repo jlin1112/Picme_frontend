@@ -10,8 +10,8 @@
 }
 
 .nav{
-   flex: 20%;
-   flex-grow: 1;
+   /* flex: 20%;
+   flex-grow: 1; */
    width: fit-content;
 }
 
@@ -74,8 +74,8 @@ background: linear-gradient(118deg, rgba(250,250,250,1) 50%, rgba(255,235,205,1)
     width: 100%;
     display: flex;
     justify-content: center;
-    font-size: 2em;
-    margin-top: 2em;
+    font-size: 12pt;
+    margin-top: 1.2em;
   }
 
   .card-modal{
@@ -130,7 +130,7 @@ background: linear-gradient(118deg, rgba(250,250,250,1) 50%, rgba(255,235,205,1)
     gap: 2em;
    }
    .pagination > *{
-    font-size: 1.5em;
+    font-size: 12pt;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -158,8 +158,8 @@ background: linear-gradient(118deg, rgba(250,250,250,1) 50%, rgba(255,235,205,1)
    }
 
    .custom-loader {
-    width:200px;
-    height:200px;
+    width:120px;
+    height:120px;
     border-radius:50%;
     background:conic-gradient(#0000 10%,#ef8453);
     mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
@@ -189,12 +189,12 @@ background: linear-gradient(118deg, rgba(250,250,250,1) 50%, rgba(255,235,205,1)
 }
 
 .loadingFailed img{
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
 }
 
 
-@media (width < 1600px) {
+@media (width < 800px) {
 
   .nav{
    
