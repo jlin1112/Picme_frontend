@@ -128,7 +128,7 @@ const Picmes: React.FC = () => {
   useEffect(() => {
     
     setIsLoading(true);
-    Axios.post(`${apiUrl}/picmes`, { page: currentPage })
+    Axios.post(`${apiUrl}picmes`, { page: currentPage })
       .then((response) => {
         
         setData(response.data.picmes);
