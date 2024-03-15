@@ -65,7 +65,7 @@ export default function ConfirmRegister({
               type="submit"
              
             >
-              <span style={{ color: "#fafafa" }}>{isRegistering? 'Registering...' : 'Submit'}</span>
+              <span style={{ color: "#fafafa" }}>{isRegistering? 'Submitting' : 'Submit'}</span>
             </Button>
           </div>
         </div>

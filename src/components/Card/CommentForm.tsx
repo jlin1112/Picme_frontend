@@ -8,8 +8,8 @@ export default function CommentForm(props: {
   user: { username: string; id: string; avatar: number } | null;
   setComment: any;
   picId: string;
-  commentCount:number;
-  likeCount:number;
+  commentCount: number;
+  likeCount: number;
   // setLikedList:any
 }) {
   type DataToBeSubmitted = {
@@ -24,16 +24,16 @@ export default function CommentForm(props: {
   } = useForm<DataToBeSubmitted>();
 
   const [error, setError] = useState(false);
-  const [maxLengthError, setMaxLengthError] = useState(false)
+  const [maxLengthError, setMaxLengthError] = useState(false);
 
-  const [liked, setLiked] = useState(false)
+  const [liked, setLiked] = useState(false);
 
-  const [likeCount, setLikeCount] = useState(props.likeCount)
+  const [likeCount, setLikeCount] = useState(props.likeCount);
 
-  const picId = props.picId
+  const picId = props.picId;
 
   const apiUrl = process.env.REACT_APP_API_URL;
-  
+  const token = localStorage.getItem("token");
 
   Axios.defaults.withCredentials = true;
   function handleComment(data: { comment: string }) {
@@ -43,15 +43,23 @@ export default function CommentForm(props: {
       id: props.user?.id,
       avatar: props.user?.avatar,
     };
-    if(comment.length > 50){
-      setMaxLengthError(true)
-      return
-    } 
-    
-    Axios.post(`${apiUrl}picmes/${props.picId}/comment`, {
-      comment,
-      author,
-    })
+    if (comment.length > 50) {
+      setMaxLengthError(true);
+      return;
+    }
+
+    Axios.post(
+      `${apiUrl}picmes/${props.picId}/comment`,
+      {
+        comment,
+        author,
+      },
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    )
       .then(function (response) {
         const commentId = response.data;
         const newComment = { author, comment, _id: commentId };
@@ -65,62 +73,84 @@ export default function CommentForm(props: {
     reset();
   }
 
- const userId = props.user?.id
+  const userId = props.user?.id;
   const handleLike = (event: any) => {
-    
     // const liked = event.target.dataset.liked;
     if (!liked) {
-     
-      Axios.post(`${apiUrl}picmes/${props.picId}/like`, {
-        userId        
-      })
+      Axios.post(
+        `${apiUrl}picmes/${props.picId}/like`,
+        {
+          userId,
+        },
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      )
         .then(function (response) {
           setLiked((prev) => true);
           setLikeCount((prev) => prev + 1);
-         
         })
         .catch(function (error) {
           setLiked((prev) => false);
           setLikeCount((prev) => prev - 1);
-        
         });
     } else if (liked) {
-   
-      Axios.post(`${apiUrl}picmes/${props.picId}/unlike`, {
-        userId
-      })
+      Axios.post(
+        `${apiUrl}picmes/${props.picId}/unlike`,
+        {
+          userId,
+        },
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      )
         .then(function (response) {
-          setLiked((prev:any) => false);
+          setLiked((prev: any) => false);
           setLikeCount((prev) => prev - 1);
         })
         .catch(function (error) {
-          setLiked((prev:any) => true);
+          setLiked((prev: any) => true);
           setLikeCount((prev) => prev + 1);
-         
         });
     }
   };
 
-
-  Axios.post(`${apiUrl}picmes/verifyLiked/${props.user?.id}`,{picId})
-      .then(function (response) {
-        setLiked(response.data)
-      })
-      .catch(function (error) {
-        setLiked(false)
-      });
-
+  Axios.post(
+    `${apiUrl}picmes/verifyLiked/${props.user?.id}`,
+    { picId },
+    {
+      headers: {
+        Authorization: token,
+      },
+    }
+  )
+    .then(function (response) {
+      setLiked(response.data);
+    })
+    .catch(function (error) {
+      setLiked(false);
+    });
 
   return (
     <>
       <div className={module.icons}>
         <div className={module.icon}>
-          <img src={!liked ? "/icons/like.png" : "/icons/liked.png"} alt='like icon' onClick={handleLike} />
+          <img
+            src={!liked ? "/icons/like.png" : "/icons/liked.png"}
+            alt="like icon"
+            onClick={handleLike}
+          />
           <span>{likeCount}</span>
         </div>
         <div className={module.icon}>
-          <label htmlFor="comment" style={{cursor:'pointer',padding:'0'}}><img src="/icons/comment.png" alt="comment icon" /></label>
-          
+          <label htmlFor="comment" style={{ cursor: "pointer", padding: "0" }}>
+            <img src="/icons/comment.png" alt="comment icon" />
+          </label>
+
           <span>{props.commentCount}</span>
         </div>
       </div>
@@ -143,16 +173,18 @@ export default function CommentForm(props: {
             rows={3}
             style={{ resize: "none" }}
             placeholder="Leave a comment"
-            onFocus={()=>{
-              setError(false)
-              setMaxLengthError(false)
+            onFocus={() => {
+              setError(false);
+              setMaxLengthError(false);
             }}
-            {...register("comment", { required: "comment can not be empty"})}
+            {...register("comment", { required: "comment can not be empty" })}
           ></textarea>
         </div>
-      
+
         <i style={{ color: "#DB5F58" }}>{errors.comment?.message}</i>
-        <i style={{ color: "#DB5F58" }}>{maxLengthError && 'Comment must below 50 characters'}</i>
+        <i style={{ color: "#DB5F58" }}>
+          {maxLengthError && "Comment must below 50 characters"}
+        </i>
         {error && <i style={{ color: "#DB5F58" }}>Error on adding a comment</i>}
         <div className={module["comment-button"]}>
           <Button

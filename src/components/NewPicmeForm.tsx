@@ -12,7 +12,7 @@ export default function NewPicmeForm({
   handleClose,
   user,
   picmeUploadProps,
-}:any) {
+}: any) {
   const VisuallyHiddenInput = styled("input")({
     clip: "rect(0 0 0 0)",
     clipPath: "inset(50%)",
@@ -28,51 +28,46 @@ export default function NewPicmeForm({
 
   const { description, imageToUpload, isUploading } = picmeUploadProps;
 
-
   const author = user?.id;
   const navigate = useNavigate();
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState('');
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
   const [showMessage, setShowMessage] = useState(false);
 
-  const [descriptionError, setDescriptionError] = useState(false)
+  const [descriptionError, setDescriptionError] = useState(false);
 
   const apiUrl = process.env.REACT_APP_API_URL;
- 
 
-  function handleImage(e:any) {
+  function handleImage(e: any) {
     picmeUploadProps.setImage(URL.createObjectURL(e.target.files[0]));
     picmeUploadProps.setImageToUpload(e.target.files[0]);
     picmeUploadProps.setRequireImage(false);
   }
 
-  function handleSubmit(e:React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const createAt = new Date();
 
-  
-
-
-
     if (!picmeUploadProps.imageToUpload && !picmeUploadProps.description) {
-      picmeUploadProps.setRequireImage((prev:boolean) => true);
-      picmeUploadProps.setRequireDescription((prev:boolean) => true);
+      picmeUploadProps.setRequireImage((prev: boolean) => true);
+      picmeUploadProps.setRequireDescription((prev: boolean) => true);
       return;
     } else if (!picmeUploadProps.imageToUpload) {
-      picmeUploadProps.setRequireImage((prev:boolean) => true);
+      picmeUploadProps.setRequireImage((prev: boolean) => true);
       return;
     } else if (!picmeUploadProps.description) {
-      picmeUploadProps.setRequireDescription((prev:boolean) => true);
+      picmeUploadProps.setRequireDescription((prev: boolean) => true);
       return;
-    } else if(picmeUploadProps.description.length > 400){
-      setDescriptionError(true)
-      return
+    } else if (picmeUploadProps.description.length > 400) {
+      setDescriptionError(true);
+      return;
     }
-   
+
     picmeUploadProps.setIsUploading(true);
     Axios.defaults.withCredentials = true;
+    const token = localStorage.getItem("token");
     Axios.post(
-      `${apiUrl}/picmes/new`,
+      `${apiUrl}picmes/new`,
       {
         description,
         imageToUpload,
@@ -81,6 +76,7 @@ export default function NewPicmeForm({
       },
       {
         headers: {
+          Authorization: token,
           "Content-Type": "multipart/form-data",
         },
       }
@@ -88,7 +84,7 @@ export default function NewPicmeForm({
       .then(function (response) {
         picmeUploadProps.setIsUploading(false);
         handleClose();
-        navigate("/picmes")
+        navigate("/picmes");
         navigate(0);
       })
       .catch(function (error) {
@@ -99,14 +95,13 @@ export default function NewPicmeForm({
       });
   }
 
-  function handleDescription(e:any) {
-    picmeUploadProps.setDescription((prev:any) => e.target.value);
-    picmeUploadProps.setRequireDescription((prev:boolean) => false);
-    setDescriptionError(false)
+  function handleDescription(e: any) {
+    picmeUploadProps.setDescription((prev: any) => e.target.value);
+    picmeUploadProps.setRequireDescription((prev: boolean) => false);
+    setDescriptionError(false);
   }
 
   return (
-  
     <Box className={module.box}>
       {showMessage && (
         <FormMessenger
@@ -119,7 +114,11 @@ export default function NewPicmeForm({
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <h1 className={module.heading}>
           <i>Create</i>
-          <img src="/icons/warning-cross.png" alt="close" onClick={handleClose} />
+          <img
+            src="/icons/warning-cross.png"
+            alt="close"
+            onClick={handleClose}
+          />
         </h1>
         <div className={module.underline}></div>
         <div className={module.form}>
@@ -130,62 +129,74 @@ export default function NewPicmeForm({
                   picmeUploadProps.requireImage ? "" : module.imgMsgNoshow
                 }
               >
-                <i style={{ color: "#DB5F58",fontSize:'10pt'}}>Image is required</i>
+                <i style={{ color: "#DB5F58", fontSize: "10pt" }}>
+                  Image is required
+                </i>
               </p>
               {picmeUploadProps.image ? (
-    
                 <img
                   src={picmeUploadProps.image}
-                  alt='to be uploaded'
+                  alt="to be uploaded"
                   className={module.cover}
                 />
               ) : (
                 <p>
-                  <i style={{ color: "#EB9456", fontWeight: "500",fontSize:'10pt' }}>
+                  <i
+                    style={{
+                      color: "#EB9456",
+                      fontWeight: "500",
+                      fontSize: "10pt",
+                    }}
+                  >
                     Please upload an image
                   </i>
                 </p>
               )}
             </div>
-           
+
             <div className={module.buttons}>
               {picmeUploadProps.image && (
                 <>
-                <div  className={module["clear-button"]}>
-                <Button
-                  component="label"
-                  variant="contained"
-                  startIcon={<img src="/icons/clear.png" alt="clear"/>}
-                 
-                  sx={{
-                    color: "#fafafa",
-                    backgroundColor: "#DB5F58",
-                    borderColor: "#fafafa",
-                    transition: "0.2s",
-                    borderRadius: "4px",
-                    "&:hover": {
-                      backgroundColor: "#DB5F58",
-                      color: "#fafafa",
-                      borderColor: "#DB5F58",
-                      scale: "1.1",
-                    },
-                  }}
-                  onClick={() => {
-                    picmeUploadProps.setImage((prev:any) => null);
-                    picmeUploadProps.setImageToUpload((prev:any) => null);
-                  }}
-                  disabled={isUploading? true : false}
-                >
-                  Clear Image
-                </Button>
-                </div>
-                <button    onClick={() => {
-                    picmeUploadProps.setImage((prev:any) => null);
-                    picmeUploadProps.setImageToUpload((prev:any) => null);
-                  }}
-                  disabled={isUploading? true : false}><img src="/icons/clear.png" alt="clear"  className={module["clear-icon"]}
-                 /></button>
-                
+                  <div className={module["clear-button"]}>
+                    <Button
+                      component="label"
+                      variant="contained"
+                      startIcon={<img src="/icons/clear.png" alt="clear" />}
+                      sx={{
+                        color: "#fafafa",
+                        backgroundColor: "#DB5F58",
+                        borderColor: "#fafafa",
+                        transition: "0.2s",
+                        borderRadius: "4px",
+                        "&:hover": {
+                          backgroundColor: "#DB5F58",
+                          color: "#fafafa",
+                          borderColor: "#DB5F58",
+                          scale: "1.1",
+                        },
+                      }}
+                      onClick={() => {
+                        picmeUploadProps.setImage((prev: any) => null);
+                        picmeUploadProps.setImageToUpload((prev: any) => null);
+                      }}
+                      disabled={isUploading ? true : false}
+                    >
+                      Clear Image
+                    </Button>
+                  </div>
+                  <button
+                    onClick={() => {
+                      picmeUploadProps.setImage((prev: any) => null);
+                      picmeUploadProps.setImageToUpload((prev: any) => null);
+                    }}
+                    disabled={isUploading ? true : false}
+                  >
+                    <img
+                      src="/icons/clear.png"
+                      alt="clear"
+                      className={module["clear-icon"]}
+                    />
+                  </button>
                 </>
               )}
 
@@ -207,11 +218,10 @@ export default function NewPicmeForm({
                   },
                 }}
                 onChange={handleImage}
-                disabled={isUploading? true : false}
+                disabled={isUploading ? true : false}
               >
-               <span>Upload file</span>
-                <VisuallyHiddenInput type="file"  accept=".jpg,.png,.jpeg" />
-
+                <span>Upload file</span>
+                <VisuallyHiddenInput type="file" accept=".jpg,.png,.jpeg" />
               </Button>
             </div>
           </div>
@@ -229,14 +239,22 @@ export default function NewPicmeForm({
                 picmeUploadProps.requireDescription ? "" : module.desMsgNoshow
               }
             >
-              <i style={{ color: "#DB5F58", fontWeight: "500", fontSize:'10pt' }}>
+              <i
+                style={{
+                  color: "#DB5F58",
+                  fontWeight: "500",
+                  fontSize: "10pt",
+                }}
+              >
                 Description required
               </i>
             </p>
-           {descriptionError &&  <i style={{ color: "#DB5F58", fontWeight: "500" }}>
+            {descriptionError && (
+              <i style={{ color: "#DB5F58", fontWeight: "500" }}>
                 Description must less than 400 characters
-              </i> }
-            
+              </i>
+            )}
+
             <Button
               variant="contained"
               sx={{
@@ -250,27 +268,25 @@ export default function NewPicmeForm({
                 },
               }}
               type="submit"
-              disabled={isUploading? true : false}
-              className={module['submit-button']}
+              disabled={isUploading ? true : false}
+              className={module["submit-button"]}
             >
               {isUploading ? (
                 <div className={module.uploadingText}>
                   <div className={module["custom-loader"]}></div>
-                  <span><i style={{ color: "#fafafa", fontSize:"10pt"}}>Uploading...</i></span>
+                  <span>
+                    <i style={{ color: "#fafafa", fontSize: "10pt" }}>
+                      Uploading...
+                    </i>
+                  </span>
                 </div>
               ) : (
-                <i style={{ color: "#fafafa",fontSize:'10pt' }}>Submit</i>
+                <i style={{ color: "#fafafa", fontSize: "10pt" }}>Submit</i>
               )}
             </Button>
           </div>
         </div>
       </form>
-
-   
     </Box>
-   
   );
 }
-
-
-

@@ -3,7 +3,6 @@ import module from "./CardDescription.module.css";
 import Axios from "axios";
 import Loader from "../utils/Loader";
 
-
 export default function CardDescription(props: {
   description: string;
   username: string;
@@ -11,7 +10,7 @@ export default function CardDescription(props: {
   setIsEditMode: any;
   currentUserId: string;
   picId: string;
-  getUpdatedDescription:any
+  getUpdatedDescription: any;
 }) {
   const [error, setError] = useState({ isError: false, message: "" });
   const [description, setDescription] = useState(props.description);
@@ -31,17 +30,26 @@ export default function CardDescription(props: {
     e.preventDefault();
     setIsEditing(true);
     const description = e.target[0].value || "";
+    const token = localStorage.getItem("token");
     if (!description) {
       setError({ isError: true, message: "Description required" });
       setIsEditing(false);
     } else {
-      Axios.patch(`${apiUrl}picmes/${picId}`, {
-        description,
-        currentUserId,
-      })
+      Axios.patch(
+        `${apiUrl}picmes/${picId}`,
+        {
+          description,
+          currentUserId,
+        },
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      )
         .then(function (response) {
           setDescription(description);
-          props.getUpdatedDescription(picId,description)
+          props.getUpdatedDescription(picId, description);
           setIsEditing(false);
           props.setIsEditMode(false);
         })
@@ -52,14 +60,11 @@ export default function CardDescription(props: {
           });
           setIsEditing(false);
         });
-      
-      
     }
   }
 
   return props.isEditMode ? (
     <form onSubmit={handleSubmit}>
-        
       <textarea
         defaultValue={props.description}
         className={module["edit-description"]}
@@ -69,7 +74,7 @@ export default function CardDescription(props: {
       <p style={{ color: "#DB5F58" }}>{error.isError && error.message}</p>
       <div className={module["edit-buttons"]}>
         {isEditing ? (
-           <Loader />
+          <Loader />
         ) : (
           <>
             {" "}
@@ -86,7 +91,6 @@ export default function CardDescription(props: {
     </form>
   ) : (
     <h4 className={module.description}>
-    
       <b>{props.username} </b>
       {description}
     </h4>
