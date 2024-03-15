@@ -82,7 +82,7 @@ const Register: React.FC = () => {
 
   function onSubmit(data: DataToBeSubmitted) {
     setIsRegistering(true);
-    Axios.post(`${apiUrl}/picmes/register`, {
+    Axios.post(`${apiUrl}picmes/register`, {
       username,
       email,
       password,

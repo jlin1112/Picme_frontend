@@ -29,7 +29,7 @@ export default function EmailVerify() {
 
   useEffect(() => {
     setIsLoading(true)
-    Axios.post(`${apiUrl}/picmes/verifyEmail`, { emailToken })
+    Axios.post(`${apiUrl}picmes/verifyEmail`, { emailToken })
       .then((response) => {
         setIsLoading(false)
         setSuccess(true)

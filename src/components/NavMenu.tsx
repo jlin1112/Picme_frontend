@@ -30,13 +30,11 @@ export default function NavMenu({
   Axios.defaults.withCredentials = true;
   function handleLogOut() {
     setIsLoggingOut(true);
-    Axios.delete(`${apiUrl}/logout`)
+    Axios.delete(`${apiUrl}logout`)
       .then((response) => {
-        
-       
-
-        userAuthProps.removeCookie("userInfo");
-        userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com'});
+        localStorage.removeItem('token')
+        // userAuthProps.removeCookie("userInfo");
+        // userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com'});
         userAuthProps.setUser(null);
         userAuthProps.setAuthenticated(false);
         // clearCookie("token");
@@ -47,7 +45,7 @@ export default function NavMenu({
         messageProps.setStatus("Error");
         messageProps.setMessage("unable to logout");
       });
-    // navigate(0);
+    navigate(0);
   }
 
   return (

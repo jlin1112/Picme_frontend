@@ -16,7 +16,7 @@ export default function FollowedList(props: {
   Axios.defaults.withCredentials = true;
   useEffect(() => {
     setIsLoading(true);
-    Axios.get(`${apiUrl}/picmes/profile/following/${props.userId}`)
+    Axios.get(`${apiUrl}picmes/profile/following/${props.userId}`)
       .then(function (response) {
         setFollowedList(response.data);
         setIsLoading(false);

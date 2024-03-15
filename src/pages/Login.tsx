@@ -31,7 +31,7 @@ const Login: React.FC = () => {
   function onSubmit(data: DataToBeSubmitted) {
     setIsLogging(true);
     const { email, password, stayLoggedIn=false } = data;
-    Axios.post(`${apiUrl}/picmes/login`, {
+    Axios.post(`${apiUrl}picmes/login`, {
       email,
       password,
       stayLoggedIn,

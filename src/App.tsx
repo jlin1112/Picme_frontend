@@ -34,7 +34,7 @@ const App: React.FC = () => {
   useEffect(() => {
     // setUser(prev => cookies.userInfo)
 
-    Axios.get(`${apiUrl}/picmes/verify`)
+    Axios.get(`${apiUrl}picmes/verify`)
       .then((response) => {
         const {
           userExist,

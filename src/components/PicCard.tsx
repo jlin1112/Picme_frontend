@@ -60,7 +60,7 @@ export default function PicCard(props: {
   
     if (commentId) {
       Axios.delete(
-        `${apiUrl}/picmes/${props.picId}/comment/${commentId}`
+        `${apiUrl}picmes/${props.picId}/comment/${commentId}`
       )
         .then(function (response) {
           setComment(comment.filter((c: any) => c._id !== commentId));
@@ -75,7 +75,7 @@ export default function PicCard(props: {
 
   useEffect(() => {
     setIsLoading(true);
-    Axios.get(`${apiUrl}/picmes/${props.picId}`, {
+    Axios.get(`${apiUrl}picmes/${props.picId}`, {
       withCredentials: true,
     })
       .then((response) => {
