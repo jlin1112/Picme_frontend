@@ -76,7 +76,7 @@ export default function CardButton(props: {
           }
           onClick={handleFollow}
         >
-          {isFollowed ? "Followed" : "Follow"}
+          {isFollowed ? "Unfollow" : "Follow"}
         </button>
       )}
 

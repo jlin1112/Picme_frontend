@@ -99,3 +99,7 @@
    justify-items: center;
    gap: 1em;
 }
+
+.checkbox label{
+   font-size: 10pt;
+}

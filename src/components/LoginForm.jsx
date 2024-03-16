@@ -135,14 +135,14 @@ export default function LoginForm({
             <p>
               <i style={{ color: "#DB5F58" }}>{errors.password?.message}</i>
             </p>
-            {/* <div className={module.checkbox}>
+            <div className={module.checkbox}>
               <input
                 type="checkbox"
                 id="checkbox"
                 {...register("stayLoggedIn")}
               />
               <label htmlFor="checkbox">Stay Logged In for 7 days</label>
-            </div> */}
+            </div>
           </div>
           <div className={module.button}>
             <Button
