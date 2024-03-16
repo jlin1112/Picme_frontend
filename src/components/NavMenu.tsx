@@ -30,18 +30,18 @@ export default function NavMenu({
     setIsLoggingOut(true);
     Axios.delete(`${apiUrl}logout`)
       .then((response) => {
-        console.log(response)
         localStorage.removeItem("token");
         userAuthProps.setUser(null);
         userAuthProps.setAuthenticated(false);
         setIsLoggingOut(false);
+        navigate(0);
       })
       .catch((error) => {
         setIsLoggingOut(false);
         messageProps.setStatus("Error");
         messageProps.setMessage("unable to logout");
       });
-    // navigate(0);
+    
   }
 
   return (
