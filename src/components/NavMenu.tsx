@@ -163,7 +163,7 @@ export default function NavMenu({
                   <img
                     src="/icons/login.png"
                     alt="login icon"
-                    style={{ width: "48px", height: "48px" }}
+                    style={{ width: "36px", height: "36px" }}
                   />
                   <span>Login</span>
                 </span>
