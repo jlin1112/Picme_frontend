@@ -33,8 +33,13 @@ const App: React.FC = () => {
   Axios.defaults.withCredentials = true;
   useEffect(() => {
     // setUser(prev => cookies.userInfo)
-
-    Axios.get(`${apiUrl}picmes/verify`)
+    const token = localStorage.getItem("token");
+    Axios.get(`${apiUrl}picmes/verify`, {
+      headers: {
+        Authorization: token,
+        "Content-Type": "multipart/form-data",
+      },
+    })
       .then((response) => {
         const {
           userExist,
@@ -51,10 +56,8 @@ const App: React.FC = () => {
         }
       })
       .catch((error) => {
-        
         return;
-      })
-   ;
+      });
   }, [apiUrl]);
 
   return (

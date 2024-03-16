@@ -18,26 +18,21 @@ export default function NavMenu({
 
   const [mouseEnter, setMouseEnter] = useState(false);
 
-  const [showAuthor, setShowAuthor] = useState(false)
-  const [showGuidelines, setShowGuidelines] = useState(false)
+  const [showAuthor, setShowAuthor] = useState(false);
+  const [showGuidelines, setShowGuidelines] = useState(false);
 
   const { user } = useUser();
 
   const apiUrl = process.env.REACT_APP_API_URL;
-
-
 
   Axios.defaults.withCredentials = true;
   function handleLogOut() {
     setIsLoggingOut(true);
     Axios.delete(`${apiUrl}logout`)
       .then((response) => {
-        localStorage.removeItem('token')
-        // userAuthProps.removeCookie("userInfo");
-        // userAuthProps.removeCookie("token",{path:'/',domain:'picme.onrender.com'});
+        localStorage.removeItem("token");
         userAuthProps.setUser(null);
         userAuthProps.setAuthenticated(false);
-        // clearCookie("token");
         setIsLoggingOut(false);
       })
       .catch((error) => {
@@ -50,28 +45,27 @@ export default function NavMenu({
 
   return (
     <>
-     <Modal
+      <Modal
         isOpen={showAuthor}
-        onRequestClose={()=>setShowAuthor(false)}
+        onRequestClose={() => setShowAuthor(false)}
         className={module["card-modal"]}
         style={{ overlay: { backgroundColor: "rgba(0, 0, 0, .5)" } }}
       >
-         <div>
-          <Author/>
+        <div>
+          <Author />
         </div>
       </Modal>
 
       <Modal
         isOpen={showGuidelines}
-        onRequestClose={()=>setShowGuidelines(false)}
+        onRequestClose={() => setShowGuidelines(false)}
         className={module["card-modal"]}
         style={{ overlay: { backgroundColor: "rgba(0, 0, 0, .5)" } }}
       >
-         <div>
-          <Guidelines/> 
+        <div>
+          <Guidelines />
         </div>
       </Modal>
-
 
       <div className={module.body}>
         <aside className={module.sidebar}>
