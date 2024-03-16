@@ -150,10 +150,10 @@ background: linear-gradient(118deg, rgba(250,250,250,1) 50%, rgba(255,235,205,1)
    }
 
    .custom-loader {
-    width:200px;
-    height:200px;
+    width:120px;
+    height:120px;
     border-radius:50%;
-    background:conic-gradient(#0000 10%,#ef8453);
+    background:conic-gradient(rgba(152, 129, 129, 0) 10%,#ef8453);
     mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
     animation:s3 1s infinite linear;
     -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);

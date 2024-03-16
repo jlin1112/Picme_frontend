@@ -37,6 +37,7 @@ const Login: React.FC = () => {
       stayLoggedIn,
     })
       .then(function (response) {
+        localStorage.setItem('token',response.data.token)
         setIsLogging(false);
         setUser({
           username: response.data.username,
