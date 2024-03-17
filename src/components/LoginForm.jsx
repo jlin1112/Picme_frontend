@@ -35,7 +35,7 @@ export default function LoginForm({
       stayLoggedIn,
     })
       .then(function (response) {
-        localStorage.setItem('token',response.data.token)
+        // localStorage.setItem('token',response.data.token)
         setUser({
           username: response.data.username,
           id: response.data.id,
