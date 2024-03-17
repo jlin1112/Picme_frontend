@@ -30,6 +30,7 @@ export default function NavMenu({
     setIsLoggingOut(true);
     Axios.delete(`${apiUrl}logout`)
       .then((response) => {
+        console.log(response)
         userAuthProps.setUser(null);
         userAuthProps.setAuthenticated(false);
         setIsLoggingOut(false);
