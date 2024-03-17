@@ -37,6 +37,7 @@ const App: React.FC = () => {
     //   Authorization: token,
     // };
     console.log(document.cookie);
+    console.log(cookies)
     Axios.get(`${apiUrl}picmes/verify`)
       .then((response) => {
         const {
